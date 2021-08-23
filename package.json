@@ -1,5 +1,5 @@
 {
-  "name": "template.jslib.rollup",
+  "name": "feutils",
   "version": "0.0.1",
   "description": "template js lib rollup",
   "main": "rollup.config.js",
@@ -19,6 +19,7 @@
   ],
   "author": "mshineray",
   "license": "MIT",
+  "private": true,
   "bugs": {
     "url": "https://github.com/MShineRay/template-jslib-rollup/issues"
   },
