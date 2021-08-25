@@ -8,7 +8,7 @@
     "rollup:dev": "rollup -c -w",
     "rollup:build": "rollup -c",
     "eslint": "",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -26,14 +26,18 @@
   "homepage": "https://github.com/MShineRay/template-jslib-rollup#readme",
   "devDependencies": {
     "@babel/core": "^7.15.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^20.0.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.0.4",
+    "babel-jest": "^27.0.6",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-lodash": "^3.3.4",
     "babel-preset-latest": "^6.24.1",
+    "eslint": "^7.32.0",
+    "jest": "^27.0.6",
     "rollup": "^2.56.2",
     "rollup-plugin-eslint": "^7.0.0",
     "rollup-plugin-uglify": "^6.0.4"
