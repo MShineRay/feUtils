@@ -1,9 +1,9 @@
 // babel.config.js
 module.exports = {
   presets: [
-    ['@babel/preset-env', {targets: {node: 'current'}, modules: "auto"}]
+    ['@babel/preset-env', {targets: {node: 'current'}}]
   ],
-  "env": {
+  env: {
     "test": {
       "plugins": ["@babel/plugin-transform-modules-commonjs"]// fix:  SyntaxError: Unexpected token 'export'
     }
