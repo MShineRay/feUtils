@@ -9,7 +9,7 @@
  * 因为最终的结果会对10取余来判断是否能够整除10，所以又叫做模10算法。
  */
 /**
- * 校验卡号
+ * check bankcard number
  * @param str
  * @returns {boolean}
  */
