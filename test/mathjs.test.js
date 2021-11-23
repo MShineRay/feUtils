@@ -22,7 +22,6 @@ test('mathDivide(0.3, 0.1)', () => {
 
 test('mathSubtract(0.1, 0.4)', () => {
   expect(mathSubtract(0.1, 0.4)).toBe(-0.3);
-
   // 0.1-0.4
   // Expected: -0.3
   // Received: -0.30000000000000004

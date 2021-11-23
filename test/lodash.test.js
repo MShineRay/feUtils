@@ -1,5 +1,6 @@
 // import math from '../src/math.js';
 import {add, multiply} from 'lodash'
+// lodash 数学计算方法有精度误差
 
 test('adds 1 + 2 to equal 3', () => {
   expect(add(1, 2)).toBe(3);
