@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1637633226240" clover="3.2.0">
-  <project timestamp="1637633226240" name="All files">
+<coverage generated="1637752541562" clover="3.2.0">
+  <project timestamp="1637752541562" name="All files">
     <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4" elements="8" coveredelements="8" complexity="0" loc="4" ncloc="4" packages="1" files="1" classes="1"/>
     <file name="math.js" path="/Users/mengxianrui/me/workspace/feUtils/src/math.js">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
       <line num="5" count="1" type="stmt"/>
       <line num="12" count="1" type="stmt"/>
-      <line num="18" count="1" type="stmt"/>
+      <line num="18" count="3" type="stmt"/>
       <line num="24" count="1" type="stmt"/>
     </file>
   </project>

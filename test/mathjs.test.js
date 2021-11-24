@@ -6,6 +6,17 @@ test('mathMultiply(155.70,  100)', () => {
   // Received: 15569.999999999998
 });
 
+test('mathMultiply("123.00",  100)', () => {
+  expect(mathMultiply("123.00",  100)).toBe(12300);
+  // Expected: 12300
+  // Received: 12300
+});
+test('mathMultiply("123.00",  "100")', () => {
+  expect(mathMultiply("123.00",  "100")).toBe(12300);
+  // Expected: 12300
+  // Received: 12300
+});
+
 test('mathAdd(0.1, 0.2)', () => {
   expect(mathAdd(0.1, 0.2)).toBe(0.3);
   // Expected: 0.3
