@@ -6,8 +6,10 @@
   <script>
     var begin_time = new Date().getTime()
   </script>
-  <script src='../src/loadScript.js'></script>
-  <script>
+  <script type='module'>
+    // 在chrome浏览器进行测试
+    import {loadScript} from '../src/loadScript.js'
+
     loadScript('https://www.googletagmanager.com/gtag/js',function(){
       var end_time = new Date().getTime()
       console.log('insert script success:'+(end_time-begin_time)/1000+'s')

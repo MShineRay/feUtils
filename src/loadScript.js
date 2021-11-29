@@ -3,7 +3,7 @@
  * @param url
  * @param callback
  */
-function loadScript(url, callback) {
+export function loadScript(url, callback) {
   callback = typeof callback === 'function' ? callback : function() {};
   var head = document.getElementsByTagName('head')[0];
   var script = document.createElement('script');
