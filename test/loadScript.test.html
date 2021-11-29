@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Title</title>
+  <script>
+    var begin_time = new Date().getTime()
+  </script>
+  <script src='../src/loadScript.js'></script>
+  <script>
+    loadScript('https://www.googletagmanager.com/gtag/js',function(){
+      var end_time = new Date().getTime()
+      console.log('insert script success:'+(end_time-begin_time)/1000+'s')
+    })
+  </script>
+</head>
+<body>
+
+</body>
+</html>
