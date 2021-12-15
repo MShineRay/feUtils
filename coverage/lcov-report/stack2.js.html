@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">41.67% </span>
+                <span class="strong">8.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>10/24</span>
+                <span class='fraction'>2/24</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.67% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/6</span>
+                <span class='fraction'>0/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">12.5% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/8</span>
+                <span class='fraction'>1/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">43.48% </span>
+                <span class="strong">8.7% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>10/23</span>
+                <span class='fraction'>2/23</span>
             </div>
         
             
@@ -119,8 +119,8 @@
 <a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -130,18 +130,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -149,10 +139,20 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -188,19 +188,19 @@ class Stack {
     //size()：返回栈里的元素个数。该方法和数组的length属性很类似。
   }
 &nbsp;
-  push(element){
-    this.items[this.count] = element
-    this.count++
+<span class="fstat-no" title="function not covered" >  pu</span>sh(element){
+<span class="cstat-no" title="statement not covered" >    this.items[this.count] = element</span>
+<span class="cstat-no" title="statement not covered" >    this.count++</span>
   }
 &nbsp;
-  pop(){
-    <span class="missing-if-branch" title="if path not taken" >I</span>if(this.isEmpty()){
+<span class="fstat-no" title="function not covered" >  po</span>p(){
+<span class="cstat-no" title="statement not covered" >    if(this.isEmpty()){</span>
 <span class="cstat-no" title="statement not covered" >      return undefined</span>
     }
-    this.count--
-    const result = this.items[this.count]
-    delete this.items[this.count]
-    return result
+<span class="cstat-no" title="statement not covered" >    this.count--</span>
+    const result = <span class="cstat-no" title="statement not covered" >this.items[this.count]</span>
+<span class="cstat-no" title="statement not covered" >    delete this.items[this.count]</span>
+<span class="cstat-no" title="statement not covered" >    return result</span>
   }
 &nbsp;
 <span class="fstat-no" title="function not covered" >  pe</span>ek(){
@@ -210,8 +210,8 @@ class Stack {
 <span class="cstat-no" title="statement not covered" >    return this.items[this.count-1]</span>
   }
 &nbsp;
-  isEmpty(){
-    return this.count === 0
+<span class="fstat-no" title="function not covered" >  is</span>Empty(){
+<span class="cstat-no" title="statement not covered" >    return this.count === 0</span>
   }
 &nbsp;
 <span class="fstat-no" title="function not covered" >  si</span>ze(){
@@ -241,7 +241,7 @@ export default Stack
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Dec 10 2021 16:41:46 GMT+0800 (China Standard Time)
+                at Wed Dec 15 2021 14:56:02 GMT+0800 (China Standard Time)
             </div>
         </div>
         <script src="prettify.js"></script>

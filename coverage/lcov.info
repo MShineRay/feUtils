@@ -11,12 +11,12 @@ FNDA:0,mathAdd
 FNDA:0,mathSubtract
 FNDA:0,mathMultiply
 FNDA:0,mathDivide
-FNDA:2,mathToFixed
+FNDA:1000001,mathToFixed
 DA:5,0
 DA:12,0
 DA:18,0
 DA:24,0
-DA:33,2
+DA:33,1000001
 LF:5
 LH:1
 BRF:0
