@@ -1,4 +1,4 @@
-import math, { mathMultiply, mathAdd, mathDivide, mathSubtract } from '../src/math.js'
+import math, { mathMultiply, mathAdd, mathDivide, mathSubtract, mathToFixed } from '../src/math.js'
 
 test('mathMultiply(155.70,  100)', () => {
   expect(mathMultiply(155.70,  100)).toBe(15570);
@@ -39,3 +39,12 @@ test('mathSubtract(0.1, 0.4)', () => {
 });
 
 
+
+// (144094.425).toFixed(2) === "144094.42 toFixed方法有误差
+// mathToFixed(144094.425,2) === 144094.43
+test('mathToFixed', () => {
+  expect(mathToFixed(144094.425, 2)).toBe( "144094.43");
+  // expect((144094.425).toFixed(2)).toBe(144094.43);
+  // console.log(mathToFixed(34500000/1000, 2))
+  expect(mathToFixed(34500000/1000, 2)).toBe("34500.00" );
+});
