@@ -8,16 +8,18 @@ The utils of Front-End
 
 ## Example
 ~~~
+ // no tree-saking ？？？ TODO
  import {luhnCheck} from '@a0nznpm/feutils'
  luhnCheck()
 ~~~
 
 ~~~
- import luhnCheck from '@a0nznpm/feutils/luhnCheck'
+ import luhnCheck from '@a0nznpm/feutils/src/luhnCheck'
  luhnCheck()
 ~~~
 
 ~~~
+ // no tree-saking ？？？ TODO
  const {luhnCheck} = '@a0nznpm/feutils'
  luhnCheck()
 ~~~

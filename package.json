@@ -1,7 +1,7 @@
 {
   "name": "@a0znpm/feutils",
   "packageName": "feutils",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "The utils of Front-End",
   "main": "./dist/feutils.cjs.js",
   "module": "./dist/feutils.esm.js",

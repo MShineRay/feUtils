@@ -1,6 +1,5 @@
-doc/
+docs/
 test/
-src/
 .idea/
 README-Inner.MD
 .git/
@@ -10,4 +9,5 @@ README-Inner.MD
 .eslinttrc.js
 .gitignore
 .prettierrc
-
+node_modules/
+coverage/
