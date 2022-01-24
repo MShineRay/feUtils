@@ -1,4 +1,4 @@
-import math, { bignumber, format, add, subtract, multiply, divide } from 'mathjs'
+import { bignumber, format, add, subtract, multiply, divide } from 'mathjs'
 
 // +
 export function mathAdd(a, b) {
@@ -13,12 +13,14 @@ export function mathSubtract(a, b) {
     subtract(bignumber(a), bignumber(b))
   )* 1
 }
+
 // *
 export function mathMultiply(a, b) {
   return format(
     multiply(bignumber(a), bignumber(b))
   )* 1
 }
+
 // /
 export function mathDivide(a, b) {
   return format(
@@ -32,5 +34,3 @@ export function mathDivide(a, b) {
 export function mathToFixed(value, precision){
   return format(value,  {notation: 'fixed', precision: precision})
 }
-
-export default math

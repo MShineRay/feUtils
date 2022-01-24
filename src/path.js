@@ -3,7 +3,7 @@
  * @param path
  * @returns {Object}
  */
-export const getParam = function(path) {
+export function getParam(path) {
   let url = path || location.search;
   let theRequest = new Object();
   if (url.indexOf("?") !== -1) {

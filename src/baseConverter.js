@@ -1,5 +1,5 @@
 import Stack from './stack2'
-function baseConverter(decNumber, base){
+export function baseConverter(decNumber, base){
   const remStack = new Stack()
   const digits = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
   let number = decNumber
@@ -18,4 +18,3 @@ function baseConverter(decNumber, base){
   }
   return binaryString
 }
-export default baseConverter

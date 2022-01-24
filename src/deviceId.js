@@ -5,20 +5,6 @@
  * @reference https://dlocal.gitbook.io/dlocal-china/api-dui-jie-wen-dang/payins-api-wen-dang/qi-zha-yu-fang#device-id
  */
 
-function generateDeviceId() {
-  var nav = window.navigator;
-  var screen = window.screen;
-  var deviceId = nav.mimeTypes.length;
-  Object.values(navigator.mimeTypes).forEach(p => deviceId += p.type);
-  deviceId += nav.userAgent.replace(/\D+/g, '');//Only use digits
-  deviceId += nav.plugins.length;
-  Object.values(navigator.plugins).forEach(p => deviceId += p.filename);
-  deviceId += screen.height || '';
-  deviceId += screen.width || '';
-  deviceId += screen.pixelDepth || '';
-  return checksum(deviceId);
-}
-
 function checksum(s) {
   var hash = 0, strlen = s.length, i, c;
   if ( strlen === 0 ) {
@@ -32,4 +18,16 @@ function checksum(s) {
   return Math.abs(hash);
 }
 
-export default generateDeviceId
+export function generateDeviceId() {
+  var nav = window.navigator;
+  var screen = window.screen;
+  var deviceId = nav.mimeTypes.length;
+  Object.values(navigator.mimeTypes).forEach(p => deviceId += p.type);
+  deviceId += nav.userAgent.replace(/\D+/g, '');//Only use digits
+  deviceId += nav.plugins.length;
+  Object.values(navigator.plugins).forEach(p => deviceId += p.filename);
+  deviceId += screen.height || '';
+  deviceId += screen.width || '';
+  deviceId += screen.pixelDepth || '';
+  return checksum(deviceId);
+}

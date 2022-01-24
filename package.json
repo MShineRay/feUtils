@@ -1,20 +1,25 @@
 {
   "name": "@a0znpm/feutils",
+  "packageName": "feutils",
   "version": "0.0.1",
-  "description": "the utils of FE",
-  "main": "rollup.config.js",
+  "description": "The utils of Front-End",
+  "main": "./dist/feutils.cjs.js",
+  "module": "./dist/feutils.esm.js",
+  "browser": "./dist/feutils.umd.js",
   "scripts": {
-    "build": "rollup -c -w",
+    "build": "rollup -c",
     "rollup:dev": "rollup -c -w",
     "rollup:build": "rollup -c",
-    "lint": "eslint",
-    "test": "jest"
+    "lint:fix": "eslint --fix",
+    "test": "jest",
+    "docs": "jsdoc --configure jsdoc.config.json"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MShineRay/feUtils.git"
   },
   "keywords": [
+    "feutils",
     "feUtils"
   ],
   "author": "MShineRay",
@@ -35,8 +40,10 @@
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-lodash": "^3.3.4",
     "babel-preset-latest": "^6.24.1",
+    "docdash": "^1.2.0",
     "eslint": "^7.32.0",
     "jest": "^27.0.6",
+    "jsdoc": "^3.6.9",
     "mathjs": "^10.0.0",
     "rollup": "^2.56.2",
     "rollup-plugin-eslint": "^7.0.0",

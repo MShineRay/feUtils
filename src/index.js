@@ -1,9 +1,10 @@
 /*!
  * @createDate 2021-08-23
  */
-import version from './version'
-import name from './name'
-const jsUtils = {}
-jsUtils.version = version
-jsUtils.name = name
-export default jsUtils
+export {generateDeviceId} from './deviceId'
+
+export {lunhCheck} from './luhnCheck'
+
+export {loadScript} from './loadScript'
+
+export {mathAdd, mathSubtract, mathMultiply, mathDivide, mathToFixed} from './math'

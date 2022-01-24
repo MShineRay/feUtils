@@ -4,3 +4,10 @@ src/
 .idea/
 README-Inner.MD
 .git/
+.vscode/
+.editorconfig
+.eslintignore
+.eslinttrc.js
+.gitignore
+.prettierrc
+

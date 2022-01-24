@@ -6,7 +6,8 @@ import json from '@rollup/plugin-json'
 import resolve from '@rollup/plugin-node-resolve'// 告诉 Rollup 如何查找外部模块
 import babel from '@rollup/plugin-babel'
 import {uglify} from 'rollup-plugin-uglify'
-import {name, version, author} from './package.json'
+import {packageName, version, author} from './package.json'
+const name = packageName
 const banner = `/*!
   * ${name} v${version}
   * (c) ${new Date().getFullYear()} ${author}
@@ -19,7 +20,6 @@ export default {
       banner,
       file: `dist/${name}.amd.js`,
       format: 'amd', // 浏览器
-      name
     },
     {
       file: `dist/${name}.cjs.js`,
