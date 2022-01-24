@@ -1,7 +1,7 @@
 {
-  "name": "feutils",
+  "name": "@a0znpm/feutils",
   "version": "0.0.1",
-  "description": "template js lib rollup",
+  "description": "the utils of FE",
   "main": "rollup.config.js",
   "scripts": {
     "build": "rollup -c -w",
@@ -12,18 +12,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MShineRay/template-jslib-rollup.git"
+    "url": "git+https://github.com/MShineRay/feUtils.git"
   },
   "keywords": [
-    "template-jslib-rollup"
+    "feUtils"
   ],
-  "author": "mshineray",
+  "author": "MShineRay",
   "license": "MIT",
-  "private": true,
   "bugs": {
-    "url": "https://github.com/MShineRay/template-jslib-rollup/issues"
+    "url": "https://github.com/MShineRay/feUtils/issues"
   },
-  "homepage": "https://github.com/MShineRay/template-jslib-rollup#readme",
+  "homepage": "https://github.com/MShineRay/feUtils#readme",
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@babel/plugin-transform-modules-commonjs": "^7.15.0",

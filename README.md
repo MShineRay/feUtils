@@ -1,5 +1,4 @@
-# template-jslib-rollup
-template-jslib-rollup
+# feUtils
 
 ## Q&A
 - Q1: 如何打包同时生成压缩和未压缩的代码？
