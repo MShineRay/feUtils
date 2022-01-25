@@ -10,7 +10,7 @@
     "build": "rollup -c",
     "rollup:dev": "rollup -c -w",
     "rollup:build": "rollup -c",
-    "lint:fix": "eslint --fix",
+    "lint:fix": "eslint --ext .js ./src --fix",
     "test": "jest",
     "docs": "jsdoc --configure jsdoc.config.json"
   },

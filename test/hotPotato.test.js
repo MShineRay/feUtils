@@ -1,4 +1,4 @@
-import hotPotato from '../src/hotPotato';
+import hotPotato from '../src/hotPotato'
 
 test('test', () => {
   const names = ['John', 'Jack', 'Camila', 'Ingrid', 'Carl']
@@ -8,4 +8,4 @@ test('test', () => {
   })
   console.log(`胜利者：${result.winner}`)
 
-});
+})
