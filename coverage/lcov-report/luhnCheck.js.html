@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for math.js</title>
+    <title>Code coverage report for luhnCheck.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="index.html">All files</a> math.js</h1>
+        <h1><a href="index.html">All files</a> luhnCheck.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -30,23 +30,23 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
@@ -83,42 +83,14 @@
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -129,42 +101,40 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { bignumber, format, add, subtract, multiply, divide } from 'mathjs'
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * @reference http://rosettacode.org/wiki/Luhn_test_of_credit_card_numbers#JavaScript
+ * @reference https://en.wikipedia.org/wiki/Payment_card_number
+ * https://www.cnblogs.com/cc11001100/p/9357177.html
+ * 1. 从右到左给卡号字符串编号，最右边第一位是1，最右边第二位是2，最右边第三位是3….
+ * 2. 从右向左遍历，对每一位字符t执行第三个步骤，并将每一位的计算结果相加得到一个数s。
+ * 3. 对每一位的计算规则：如果这一位是奇数位，则返回t本身，如果是偶数位，则先将t乘以2得到一个数n，如果n是一位数（小于10），直接返回n，否则将n的个位数和十位数相加返回。
+ * 4. 如果s能够整除10，则此号码有效，否则号码无效。
+ * 因为最终的结果会对10取余来判断是否能够整除10，所以又叫做模10算法。
+ */
+/**
+ * check bankcard number
+ * @param str
+ * @returns {boolean}
+ */
+export function <span class="fstat-no" title="function not covered" >lunhCheck(</span>str) {
+  const sumDigit = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(c</span>) =&gt; <span class="cstat-no" title="statement not covered" >(c &lt; 10)</span></span>
+    ? c
+    : sumDigit(Math.trunc(c / 10) + (c % 10))
 &nbsp;
-// +
-export function <span class="fstat-no" title="function not covered" >mathAdd(</span>a, b) {
-<span class="cstat-no" title="statement not covered" >  return format(</span>
-    add(bignumber(a), bignumber(b))
-  )* 1
+<span class="cstat-no" title="statement not covered" >  return str.split('').reverse()</span>
+    .map(Number)
+    .map(<span class="fstat-no" title="function not covered" >(c</span>, i) =&gt; <span class="cstat-no" title="statement not covered" >i % 2 !== 0 ? sumDigit(c * 2) : c)</span>
+    .reduce(<span class="fstat-no" title="function not covered" >(a</span>cc, v) =&gt; <span class="cstat-no" title="statement not covered" >acc + v)</span> % 10 === 0
 }
 &nbsp;
-// -
-export function <span class="fstat-no" title="function not covered" >mathSubtract(</span>a, b) {
-<span class="cstat-no" title="statement not covered" >  return format(</span>
-    subtract(bignumber(a), bignumber(b))
-  )* 1
-}
-&nbsp;
-// *
-export function <span class="fstat-no" title="function not covered" >mathMultiply(</span>a, b) {
-<span class="cstat-no" title="statement not covered" >  return format(</span>
-    multiply(bignumber(a), bignumber(b))
-  )* 1
-}
-&nbsp;
-// /
-export function <span class="fstat-no" title="function not covered" >mathDivide(</span>a, b) {
-<span class="cstat-no" title="statement not covered" >  return format(</span>
-    divide(bignumber(a), bignumber(b))
-  )* 1
-}
-&nbsp;
-&nbsp;
-// (144094.425).toFixed(2) === "144094.42" toFixed方法有误差
-// mathToFixed(144094.425,2) === "144094.43"
-export function <span class="fstat-no" title="function not covered" >mathToFixed(</span>value, precision){
-<span class="cstat-no" title="statement not covered" >  return format(value,  {notation: 'fixed', precision: precision})</span>
-}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->

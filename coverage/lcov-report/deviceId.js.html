@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for math.js</title>
+    <title>Code coverage report for deviceId.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="index.html">All files</a> math.js</h1>
+        <h1><a href="index.html">All files</a> deviceId.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>0/22</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>0/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>0/19</span>
             </div>
         
             
@@ -90,36 +90,7 @@
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
 <a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L34'></a><a href='#L34'>34</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -128,42 +99,62 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { bignumber, format, add, subtract, multiply, divide } from 'mathjs'
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * 用户设备id
+ *
+ * @returns {number|number}
+ * @reference https://dlocal.gitbook.io/dlocal-china/api-dui-jie-wen-dang/payins-api-wen-dang/qi-zha-yu-fang#device-id
+ */
 &nbsp;
-// +
-export function <span class="fstat-no" title="function not covered" >mathAdd(</span>a, b) {
-<span class="cstat-no" title="statement not covered" >  return format(</span>
-    add(bignumber(a), bignumber(b))
-  )* 1
+function <span class="fstat-no" title="function not covered" >checksum(</span>s) {
+  var hash = <span class="cstat-no" title="statement not covered" >0,</span> strlen = <span class="cstat-no" title="statement not covered" >s.length,</span> i, c
+<span class="cstat-no" title="statement not covered" >  if ( strlen === 0 ) {</span>
+<span class="cstat-no" title="statement not covered" >    return hash</span>
+  }
+<span class="cstat-no" title="statement not covered" >  for ( i = 0; i &lt; strlen; i++ ) {</span>
+<span class="cstat-no" title="statement not covered" >    c = s.charCodeAt( i )</span>
+<span class="cstat-no" title="statement not covered" >    hash = ((hash &lt;&lt; 5) - hash) + c</span>
+<span class="cstat-no" title="statement not covered" >    hash = hash &amp; hash </span>// Convert to 32bit integer
+  }
+<span class="cstat-no" title="statement not covered" >  return Math.abs(hash)</span>
 }
 &nbsp;
-// -
-export function <span class="fstat-no" title="function not covered" >mathSubtract(</span>a, b) {
-<span class="cstat-no" title="statement not covered" >  return format(</span>
-    subtract(bignumber(a), bignumber(b))
-  )* 1
-}
-&nbsp;
-// *
-export function <span class="fstat-no" title="function not covered" >mathMultiply(</span>a, b) {
-<span class="cstat-no" title="statement not covered" >  return format(</span>
-    multiply(bignumber(a), bignumber(b))
-  )* 1
-}
-&nbsp;
-// /
-export function <span class="fstat-no" title="function not covered" >mathDivide(</span>a, b) {
-<span class="cstat-no" title="statement not covered" >  return format(</span>
-    divide(bignumber(a), bignumber(b))
-  )* 1
-}
-&nbsp;
-&nbsp;
-// (144094.425).toFixed(2) === "144094.42" toFixed方法有误差
-// mathToFixed(144094.425,2) === "144094.43"
-export function <span class="fstat-no" title="function not covered" >mathToFixed(</span>value, precision){
-<span class="cstat-no" title="statement not covered" >  return format(value,  {notation: 'fixed', precision: precision})</span>
+export function <span class="fstat-no" title="function not covered" >generateDeviceId(</span>) {
+  var nav = <span class="cstat-no" title="statement not covered" >window.navigator</span>
+  var screen = <span class="cstat-no" title="statement not covered" >window.screen</span>
+  var deviceId = <span class="cstat-no" title="statement not covered" >nav.mimeTypes.length</span>
+<span class="cstat-no" title="statement not covered" >  Object.values(navigator.mimeTypes).forEach(<span class="fstat-no" title="function not covered" >p </span>=&gt; <span class="cstat-no" title="statement not covered" >deviceId += p.type)</span></span>
+<span class="cstat-no" title="statement not covered" >  deviceId += nav.userAgent.replace(/\D+/g, '')/</span>/Only use digits
+<span class="cstat-no" title="statement not covered" >  deviceId += nav.plugins.length</span>
+<span class="cstat-no" title="statement not covered" >  Object.values(navigator.plugins).forEach(<span class="fstat-no" title="function not covered" >p </span>=&gt; <span class="cstat-no" title="statement not covered" >deviceId += p.filename)</span></span>
+<span class="cstat-no" title="statement not covered" >  deviceId += screen.height || ''</span>
+<span class="cstat-no" title="statement not covered" >  deviceId += screen.width || ''</span>
+<span class="cstat-no" title="statement not covered" >  deviceId += screen.pixelDepth || ''</span>
+<span class="cstat-no" title="statement not covered" >  return checksum(deviceId)</span>
 }
 &nbsp;</pre></td></tr></table></pre>
 
