@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1644560261115" clover="3.2.0">
-  <project timestamp="1644560261115" name="All files">
-    <metrics statements="43" coveredstatements="4" conditionals="26" coveredconditionals="6" methods="17" coveredmethods="1" elements="86" coveredelements="11" complexity="0" loc="43" ncloc="43" packages="1" files="6" classes="6"/>
+<coverage generated="1644828320205" clover="3.2.0">
+  <project timestamp="1644828320205" name="All files">
+    <metrics statements="48" coveredstatements="10" conditionals="31" coveredconditionals="11" methods="18" coveredmethods="2" elements="97" coveredelements="23" complexity="0" loc="48" ncloc="48" packages="1" files="6" classes="6"/>
     <file name="deviceId.js" path="/Users/mengxianrui/me/workspace/feUtils/src/deviceId.js">
       <metrics statements="19" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="4" coveredmethods="0"/>
       <line num="9" count="0" type="stmt"/>
@@ -56,12 +56,17 @@
       <line num="35" count="0" type="stmt"/>
     </file>
     <file name="string.js" path="/Users/mengxianrui/me/workspace/feUtils/src/string.js">
-      <metrics statements="5" coveredstatements="4" conditionals="8" coveredconditionals="6" methods="1" coveredmethods="1"/>
-      <line num="10" count="1" type="cond" truecount="3" falsecount="1"/>
-      <line num="11" count="1" type="stmt"/>
-      <line num="12" count="1" type="stmt"/>
-      <line num="13" count="1" type="stmt"/>
-      <line num="15" count="0" type="stmt"/>
+      <metrics statements="10" coveredstatements="10" conditionals="13" coveredconditionals="11" methods="2" coveredmethods="2"/>
+      <line num="10" count="5" type="cond" truecount="4" falsecount="0"/>
+      <line num="11" count="3" type="stmt"/>
+      <line num="12" count="3" type="stmt"/>
+      <line num="13" count="3" type="stmt"/>
+      <line num="15" count="2" type="stmt"/>
+      <line num="27" count="2" type="stmt"/>
+      <line num="28" count="2" type="stmt"/>
+      <line num="29" count="2" type="cond" truecount="3" falsecount="1"/>
+      <line num="30" count="2" type="stmt"/>
+      <line num="33" count="2" type="stmt"/>
     </file>
   </project>
 </coverage>

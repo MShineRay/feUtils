@@ -15,3 +15,21 @@ export function maskStr(str = '', beginLen = 4, endLen = 4, mask = '*') {
     return str
   }
 }
+
+/**
+ * 将json对象转换成get请求参数
+ * @param obj
+ * @returns {string}
+ * @example
+ *  {data:1, test:2}  --->  data=1&test=1
+ */
+export function serialize(obj={}) {
+  let ary = []
+  for (let p in obj) {
+    if (obj.hasOwnProperty(p) && obj[p]) {
+      ary.push(encodeURIComponent(p) + '=' + encodeURIComponent(obj[p]))
+    }
+  }
+  return ary.join('&')
+}
+
