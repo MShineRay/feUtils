@@ -8,7 +8,7 @@ export function getBrowserInfo(ua) {
 
   if(/msie/.test(ua)){
     browserInfo.name="IE"
-    browserInfo.version = ua.split('msie ')[1].split(' ')[1]
+    browserInfo.version = ua.split('msie ')[1].split(';')[0]
   }else if(ua.indexOf('chrome') > -1 && ua.indexOf('safari') > -1){
     browserInfo.name="Chrome"
     browserInfo.version = ua.split('chrome/')[1].split(' ')[0]
