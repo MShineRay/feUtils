@@ -38,7 +38,7 @@ function getRandomInt(min, max) {
 }
 test('toFixed', () => {
   let count = 0
-  while (count < 1000000){
+  while (count < 3){ // 测试时，可以调大，etc. 1000000
     count++
     let fixNum = getRandomInt(0, 10)
     let testNum = getRandomArbitrary(-9999999999.99999999,9999999999.99999999)

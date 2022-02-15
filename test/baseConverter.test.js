@@ -1,4 +1,4 @@
-import baseConverter from '../src/baseConverter'
+import {baseConverter} from '../src/baseConverter'
 
 test('baseConverter(10, 2) === "1010"', () => {
   expect(baseConverter(10, 2)).toBe('1010')
