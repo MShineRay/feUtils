@@ -67,6 +67,14 @@ describe('navigator.userAgent', ()=>{
         browserVersion: '8.0',
         osName: 'Windows',
         osVersion: '6.1'
+      },
+      {
+        // https://docs.microsoft.com/zh-cn/archive/blogs/ieinternals/internet-explorer-11s-many-user-agent-string
+        ua: "Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko",
+        browserName: 'IE',
+        browserVersion: '11.0',
+        osName: 'Windows',
+        osVersion: '6.3'
       }
     ]
     for (let i=0, len=uaList.length; i<len; i++){

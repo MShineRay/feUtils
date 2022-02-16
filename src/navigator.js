@@ -9,7 +9,10 @@ export function getBrowserInfo(ua) {
   if(/msie/.test(ua)){
     browserInfo.name="IE"
     browserInfo.version = ua.split('msie ')[1].split(';')[0]
-  }else if(ua.indexOf('chrome') > -1 && ua.indexOf('safari') > -1){
+  }else if(ua.match(/rv:([\d.]+)\) like gecko/)){ // IE11
+    browserInfo.name="IE"
+    browserInfo.version = ua.split('rv:')[1].split(')')[0]
+  } else if(ua.indexOf('chrome') > -1 && ua.indexOf('safari') > -1){
     browserInfo.name="Chrome"
     browserInfo.version = ua.split('chrome/')[1].split(' ')[0]
   }else if(ua.indexOf('firefox') > -1){
