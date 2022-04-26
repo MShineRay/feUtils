@@ -59,7 +59,7 @@ export function formatDateTime(inputTime) {
 
 /**
  *
- * @param timestamp
+ * @param timestamp 时间戳是自1970 年1 月1 日（00:00:00 GMT）以来的秒数。不区分时区概念
  * @param format
  * @returns {string}
  */
@@ -67,9 +67,9 @@ export function zeroToLocal(timestamp, format) {
   if (!timestamp) {
     return
   }
-  const timeZone = -new Date().getTimezoneOffset() / 60
-  const createTime = new Date(timestamp).getTime() + timeZone * 60 * 60 * 1000
-  return parseDate(createTime, format)
+  // const timeZone = -new Date().getTimezoneOffset() / 60
+  // const createTime = new Date(timestamp).getTime() + timeZone * 60 * 60 * 1000
+  return parseDate(timestamp, format)
 }
 
 // 转换为零时区时间   国际标准时间=世界时=格林尼治时间=0时区区时=0度经线地方时
