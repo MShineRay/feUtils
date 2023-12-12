@@ -22,15 +22,6 @@ export function removeEventListener(dom, eventName, callback) {
 }
 
 /**
- * 尽可能快的执行
- * @param fn
- * @reference https://developer.mozilla.org/zh-CN/docs/Web/API/setTimeout
- */
-export function timeOut0(fn) {
-  window.setTimeout(fn, 0);
-}
-
-/**
  * 图片上报
  * @param src
  * @param successCb 成功回调
@@ -38,7 +29,7 @@ export function timeOut0(fn) {
  * @returns {HTMLImageElement}
  */
 export function imagePing(src, successCb, errorCb) {
-  var d = new Image(1, 1);
+  const d = new Image(1, 1);
   d.onload = function() {
     d.onload = null;
     successCb && successCb();

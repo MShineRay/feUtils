@@ -7,6 +7,6 @@ export {lunhCheck} from './luhnCheck'
 
 export {loadScript} from './loadScript'
 
-export {mathAdd, mathSubtract, mathMultiply, mathDivide, mathToFixed} from './math'
+export {mathSubtract, mathAdd, mathMultiply, mathDivide, mathToFixed} from './math'
 
 export {maskStr} from './string'
