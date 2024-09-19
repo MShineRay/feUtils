@@ -2,8 +2,11 @@
  * @createDate 2021-08-23
  */
 import {animation} from './animation'
-import {debounce} from './debounce'
 import  {currying} from './currying'
+
+import {debounce} from './debounce'
+
+import {fileHash, createChunks} from './file.js'
 
 export {generateDeviceId} from './deviceId'
 
@@ -29,5 +32,7 @@ export default {
   mathDivide,
   mathToFixed,
   maskStr,
-  isLoadedScript
+  isLoadedScript,
+  fileHash,
+  createChunks
 }
