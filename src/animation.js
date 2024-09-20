@@ -1,3 +1,11 @@
+/**
+ * 动画函数
+ * 匀速变化
+ * @param from
+ * @param to
+ * @param duration
+ * @param onUpdate
+ */
 export function animation({
   from,
   to,
@@ -21,7 +29,7 @@ export function animation({
     onUpdate && onUpdate(value)
 
     // 注册下一次变化
-    requestAnimationFrame(_run);
+      (_run);
   }
   _run();
 }

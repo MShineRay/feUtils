@@ -2,11 +2,15 @@
  * @createDate 2021-08-23
  */
 import {animation} from './animation'
+
 import  {currying} from './currying'
+import {copyText} from './copyText'
 
 import {debounce} from './debounce'
 
 import {fileHash, createChunks} from './file.js'
+import { parallelTask } from './parallelTask'
+import { performChunk } from './performChunk'
 
 export {generateDeviceId} from './deviceId'
 
@@ -22,8 +26,12 @@ export {isLoadedScript} from './loadScript'
 export default {
   animation,
   currying,
+  copyText,
+  createChunks,
   debounce,
+  fileHash,
   generateDeviceId,
+  isLoadedScript,
   lunhCheck,
   loadScript,
   mathSubtract,
@@ -32,7 +40,6 @@ export default {
   mathDivide,
   mathToFixed,
   maskStr,
-  isLoadedScript,
-  fileHash,
-  createChunks
+  parallelTask,
+  performChunk
 }
