@@ -9,6 +9,9 @@ import {copyText} from './copyText'
 import {debounce} from './debounce'
 
 import {fileHash, createChunks} from './file.js'
+import { filterInt } from './filterInt'
+
+
 import { parallelTask } from './parallelTask'
 import { performChunk } from './performChunk'
 
@@ -30,6 +33,7 @@ export default {
   createChunks,
   debounce,
   fileHash,
+  filterInt,
   generateDeviceId,
   isLoadedScript,
   lunhCheck,

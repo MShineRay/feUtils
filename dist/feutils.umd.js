@@ -4,6 +4,14 @@
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.feutils = {}));
 }(this, (function (exports) { 'use strict';
 
+  /**
+   * 动画函数
+   * 匀速变化
+   * @param from
+   * @param to
+   * @param duration
+   * @param onUpdate
+   */
   function animation(_ref) {
     var from = _ref.from,
         to = _ref.to,
@@ -24,9 +32,8 @@
       }
 
       value = from + speed * t;
-      onUpdate && onUpdate(value); // 注册下一次变化
-
-      requestAnimationFrame(_run);
+      onUpdate && onUpdate(value) // 注册下一次变化
+      (_run);
     }
 
     _run();
@@ -62,6 +69,40 @@
   //  console.log(currying(add,1,2,3)); // 6)
   //  console.log(currying(add,1)(2,3)); // 6)
 
+  /**
+   * 复制文本
+   * @param text
+   */
+  function copyText(text) {
+    if (navigator.clipboard) {
+      // copyText = (text) =>{// 惰性函数方式
+      navigator.clipboard.writeText(text).then(function () {
+        console.log('Async: Copying to clipboard was successful!');
+      }, function (err) {
+        console.error('Async: Could not copy text: ', err);
+      }); // }
+    } else {
+      // copyText = (text) =>{// 惰性函数方式
+      var textArea = document.createElement('textarea');
+      textArea.value = text;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea); // }
+    }
+  }
+
+  /**
+   * 防抖
+   * 关注点：
+   *  频繁触发
+   *  耗时操作
+   *  仅关心最后一次的触发
+   * @param fn
+   * @param delay
+   * @param args
+   * @returns {(function(): void)|*}
+   */
   function debounce(fn) {
     var delay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1000;
 
@@ -867,6 +908,103 @@
 
       loadNext();
     });
+  }
+
+  /**
+   * 解析整型值
+   * https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/parseInt
+   * @param value
+   * @returns {number}
+   */
+  function filterInt(value) {
+    if (/^(\-|\+)?([0-9]+|Infinity)$/.test(value)) return Number(value);
+    return NaN;
+  }
+
+  /**
+   * 并发执行任务
+   * @param tasks
+   * @param parallelCount
+   * @returns {Promise<unknown>}
+   */
+  function parallelTask(tasks) {
+    var parallelCount = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
+    return new Promise(function (resolve, reject) {
+      if (tasks.length === 0) {
+        resolve();
+        return;
+      }
+
+      var nextIndex = 0;
+      var finishCount = 0; // 任务完成数量
+
+      function _run() {
+        // 运行下一个任务
+        var task = tasks[nextIndex];
+        nextIndex++;
+        task().then(function () {
+          finishCount++;
+
+          if (finishCount === tasks.length) {
+            resolve();
+          } else if (nextIndex < tasks.length) {
+            // 还有下一个任务
+            _run();
+          }
+        })["catch"](function (err) {
+          reject(err);
+        });
+      }
+
+      for (var i = 0; i < parallelCount && i < tasks.length; i++) {
+        _run();
+      }
+    });
+  }
+
+  /**
+   * 分时函数
+   * @param datas
+   * @param consumer
+   * @param chunkSplitter
+   */
+  function performChunk(datas, consumer, chunkSplitter) {
+    if (typeof datas === 'number') {
+      datas = new Array(datas);
+    }
+
+    if (datas.length === 0) return;
+
+    if (!chunkSplitter && globalThis.requestIdleCallback) {
+      chunksplitter = function chunksplitter(task) {
+        requestIdleCallback(function (idle) {
+          task(function () {
+            return idle.timeRemaining() > 0;
+          });
+        });
+      };
+    }
+
+    var i = 0; // 目前应该取出的任务下标
+    // 执行下一个任务
+
+    function _run() {
+      if (i === datas.length) {
+        return;
+      }
+
+      chunkSplitter(function (hasTime) {
+        var now = Date.now();
+
+        while (hasTime(Date.now() - now) && i < datas.length) {
+          consumer();
+        }
+
+        _run();
+      });
+    }
+
+    _run();
   }
 
   /**
@@ -20800,8 +20938,13 @@
   var index = {
     animation: animation,
     currying: currying,
+    copyText: copyText,
+    createChunks: createChunks,
     debounce: debounce,
+    fileHash: fileHash,
+    filterInt: filterInt,
     generateDeviceId: generateDeviceId,
+    isLoadedScript: isLoadedScript,
     lunhCheck: lunhCheck,
     loadScript: loadScript,
     mathSubtract: mathSubtract,
@@ -20810,9 +20953,8 @@
     mathDivide: mathDivide,
     mathToFixed: mathToFixed,
     maskStr: maskStr,
-    isLoadedScript: isLoadedScript,
-    fileHash: fileHash,
-    createChunks: createChunks
+    parallelTask: parallelTask,
+    performChunk: performChunk
   };
 
   exports['default'] = index;
