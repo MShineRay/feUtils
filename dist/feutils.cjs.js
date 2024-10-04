@@ -20930,6 +20930,22 @@ function maskStr$1() {
   }
 }
 
+/**
+ * 单例
+ * @param className
+ * @returns {function(): *}
+ */
+function singleton(className) {
+  var instance = null;
+  return function () {
+    if (instance === null) {
+      instance = new className();
+    }
+
+    return instance;
+  };
+}
+
 /*!
  * @createDate 2021-08-23
  */
@@ -20952,7 +20968,8 @@ var index = {
   mathToFixed: mathToFixed,
   maskStr: maskStr,
   parallelTask: parallelTask,
-  performChunk: performChunk
+  performChunk: performChunk,
+  singleton: singleton
 };
 
 exports['default'] = index;

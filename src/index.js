@@ -2,6 +2,7 @@
  * @createDate 2021-08-23
  */
 import {animation} from './animation'
+import { addMethod } from './addMethod'
 
 import  {currying} from './currying'
 import {copyText} from './copyText'
@@ -26,8 +27,11 @@ export {mathSubtract, mathAdd, mathMultiply, mathDivide, mathToFixed} from './ma
 export {maskStr} from './string'
 export {isLoadedScript} from './loadScript'
 
+import { singleton } from './singleton'
+
 export default {
   animation,
+  addMethod,
   currying,
   copyText,
   createChunks,
@@ -45,5 +49,6 @@ export default {
   mathToFixed,
   maskStr,
   parallelTask,
-  performChunk
+  performChunk,
+  singleton
 }

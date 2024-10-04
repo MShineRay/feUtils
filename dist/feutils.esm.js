@@ -20926,6 +20926,22 @@ function maskStr$1() {
   }
 }
 
+/**
+ * 单例
+ * @param className
+ * @returns {function(): *}
+ */
+function singleton(className) {
+  var instance = null;
+  return function () {
+    if (instance === null) {
+      instance = new className();
+    }
+
+    return instance;
+  };
+}
+
 /*!
  * @createDate 2021-08-23
  */
@@ -20948,7 +20964,8 @@ var index = {
   mathToFixed: mathToFixed,
   maskStr: maskStr,
   parallelTask: parallelTask,
-  performChunk: performChunk
+  performChunk: performChunk,
+  singleton: singleton
 };
 
 export { index as default, generateDeviceId$1 as generateDeviceId, isLoadedScript$1 as isLoadedScript, loadScript$1 as loadScript, lunhCheck$1 as lunhCheck, maskStr$1 as maskStr, mathAdd$1 as mathAdd, mathDivide$1 as mathDivide, mathMultiply$1 as mathMultiply, mathSubtract$1 as mathSubtract, mathToFixed$1 as mathToFixed };

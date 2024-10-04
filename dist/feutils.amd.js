@@ -1,5 +1,5 @@
 /*!
-  * feutils v1.0.0
+  * feutils v1.0.1
   * (c) 2024 MShineRay
   * @license MIT
   */
@@ -20933,6 +20933,22 @@ define(['exports'], function (exports) { 'use strict';
     }
   }
 
+  /**
+   * 单例
+   * @param className
+   * @returns {function(): *}
+   */
+  function singleton(className) {
+    var instance = null;
+    return function () {
+      if (instance === null) {
+        instance = new className();
+      }
+
+      return instance;
+    };
+  }
+
   /*!
    * @createDate 2021-08-23
    */
@@ -20955,7 +20971,8 @@ define(['exports'], function (exports) { 'use strict';
     mathToFixed: mathToFixed,
     maskStr: maskStr,
     parallelTask: parallelTask,
-    performChunk: performChunk
+    performChunk: performChunk,
+    singleton: singleton
   };
 
   exports['default'] = index;
